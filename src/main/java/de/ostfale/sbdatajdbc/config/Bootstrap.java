@@ -25,5 +25,7 @@ public class Bootstrap implements CommandLineRunner {
         System.out.println("ID: before save: " + before.getId());
         Minion after = minionRepository.save(before);
         System.out.println("ID: after save: " + after.getId());
+        after.setName("Bobsley");
+        minionRepository.save(after);
     }
 }
