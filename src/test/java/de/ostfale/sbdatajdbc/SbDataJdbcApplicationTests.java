@@ -9,5 +9,4 @@ class SbDataJdbcApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }
