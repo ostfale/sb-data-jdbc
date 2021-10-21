@@ -3,6 +3,8 @@ package de.ostfale.sbdatajdbc.model;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.relational.core.mapping.Column;
 
 import java.util.Date;
 
@@ -18,8 +20,27 @@ public class Minion {
     @LastModifiedDate
     private Date lastModified;
 
+    @Column("DOB") // to map db column if property not same as column name
+    private Date dateOfBirth;
+
+    @Transient
+    private String dateOfBirthString;
+
     public Minion() {
         this.id = null;
+    }
+
+    public String getDateOfBirthString() {
+        return dateOfBirthString;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+        this.dateOfBirthString = dateOfBirth.toString();
     }
 
     public void setName(String name) {
