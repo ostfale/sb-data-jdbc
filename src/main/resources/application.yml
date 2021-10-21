@@ -7,3 +7,10 @@ spring:
   h2:
     console:
       enabled: true
+      path: /h2
+  jackson:
+    serialization:
+      indent-output: true
+
+server:
+  port: 8181
