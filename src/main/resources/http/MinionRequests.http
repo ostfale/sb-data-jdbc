@@ -1,0 +1,19 @@
+POST http://localhost:8181/api/v1/minion
+Content-Type: application/json
+
+{
+  "name": "Laura",
+  "dateOfBirth": "2010-08-02",
+  "minionColor": "BLUE"
+}
+
+###
+GET http://localhost:8181/api/v1/minion/1
+Accept: application/json
+
+###
+GET http://localhost:8181/api/v1/minion
+Accept: application/json
+
+###
+

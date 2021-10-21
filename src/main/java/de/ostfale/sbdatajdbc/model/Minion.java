@@ -26,12 +26,36 @@ public class Minion {
     @Transient
     private String dateOfBirthString;
 
+    private MinionColor minionColor; // Enum Type
+
     public Minion() {
         this.id = null;
+        this.minionColor = MinionColor.YELLOW;
+    }
+
+    @Override
+    public String toString() {
+        return "Minion{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", createdDate=" + createdDate +
+                ", lastModified=" + lastModified +
+                ", dateOfBirth=" + dateOfBirth +
+                ", dateOfBirthString='" + dateOfBirthString + '\'' +
+                ", minionColor=" + minionColor +
+                '}';
     }
 
     public String getDateOfBirthString() {
         return dateOfBirthString;
+    }
+
+    public MinionColor getMinionColor() {
+        return minionColor;
+    }
+
+    public void setMinionColor(MinionColor minionColor) {
+        this.minionColor = minionColor;
     }
 
     public Date getDateOfBirth() {
